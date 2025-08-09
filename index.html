@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CrazyPlay - Oyun Platformu</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <div class="logo">CP</div>
+      <div>
+        <h1>CrazyPlay</h1>
+        <p class="tag">Hızlı — Şık — Gece Modu</p>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="themeToggle" class="btn small">🌙 Gece</button>
+      <span id="welcome" class="welcome"></span>
+      <button id="loginBtn" class="btn">Giriş / Kayıt</button>
+      <button id="logoutBtn" class="btn danger" style="display:none">Çıkış</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h2>En Yeni ve Popüler Oyunlar</h2>
+    <p>Hemen oyna, not ekle, ve kendi oyunlarını yönet.</p>
+    <div class="hero-actions">
+      <button id="addGameQuick" class="btn primary" style="display:none">Oyun Ekle</button>
+    </div>
+  </section>
+
+  <section id="gameGrid" class="game-grid"></section>
+
+  <section id="notesPanel" class="notes-panel" style="display:none">
+    <h3>Notlar</h3>
+    <textarea id="noteInput" placeholder="Bir not ekleyin..."></textarea>
+    <button id="saveNote" class="btn">Kaydet</button>
+    <ul id="notesList"></ul>
+  </section>
+</main>
+
+<!-- Modals -->
+<div id="modalBackdrop" class="modal-backdrop" style="display:none"></div>
+
+<div id="authModal" class="modal" style="display:none">
+  <h3>Giriş / Kayıt</h3>
+  <div class="form-row"><input id="authName" placeholder="Kullanıcı adı" /></div>
+  <div class="form-row"><input id="authPass" placeholder="Şifre" type="password" /></div>
+  <div class="form-row small">Rol seç (demo): <select id="authRole"><option value="player">Player</option><option value="uploader">Uploader</option></select></div>
+  <div class="form-row actions">
+    <button id="authRegister" class="btn">Kayıt Ol</button>
+    <button id="authLogin" class="btn primary">Giriş Yap</button>
+    <button id="authClose" class="btn">İptal</button>
+  </div>
+  <p class="muted">Admin demo: kullanıcı <strong>admin</strong> şifre <strong>1234</strong></p>
+</div>
+
+<div id="addGameModal" class="modal" style="display:none">
+  <h3>Yeni Oyun Ekle</h3>
+  <div class="form-row"><input id="gameTitle" placeholder="Oyun başlığı" /></div>
+  <div class="form-row"><input id="gameUrl" placeholder="Oyun URL (http...)" /></div>
+  <div class="form-row"><input id="gameThumb" placeholder="Thumb URL (opsiyonel)" /></div>
+  <div class="form-row actions">
+    <button id="addGameSave" class="btn primary">Kaydet</button>
+    <button id="addGameCancel" class="btn">İptal</button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">© <span id="year"></span> CrazyPlay — Demo</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
